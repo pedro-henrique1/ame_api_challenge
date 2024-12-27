@@ -4,16 +4,10 @@ package backend.challenge_ame.model;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
-import org.springframework.data.annotation.Id;
 
 @Entity
 @Table(name = "planets")
-@Getter
-@Setter
-
 public class Planet {
-
-    @jakarta.persistence.Id
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
@@ -27,6 +21,45 @@ public class Planet {
     @Column(nullable = false)
     private String terrain;
 
-    @Column(nullable = false)
-    private Integer film_appearance;
+    private Integer film_appearances;
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getClimate() {
+        return climate;
+    }
+
+    public void setClimate(String climate) {
+        this.climate = climate;
+    }
+
+    public String getTerrain() {
+        return terrain;
+    }
+
+    public void setTerrain(String terrain) {
+        this.terrain = terrain;
+    }
+
+    public Integer getFilm_appearances() {
+        return film_appearances;
+    }
+
+    public void setFilm_appearances(Integer film_appearances) {
+        this.film_appearances = film_appearances;
+    }
 }
